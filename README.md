@@ -40,7 +40,7 @@ A full-stack Blood Bank Management System built using the MERN Stack to manage d
 ![Dashboard](screenshots/dashboard.png)
 
 ### Blood Inventory
-![Inventory](screenshots/blood%20inventory.png)
+![Inventory](screenshots/inventory.png)
 
 ### Donor Management
 ![Donors](screenshots/donors.png)
