@@ -5,10 +5,18 @@ module.exports = (io) => {
   const router = express.Router();
 
   router.get("/", async (req, res) => {
-    const { group } = req.query;
-    const data = group
-      ? await Blood.find({ bloodGroup: group })
-      : await Blood.find();
+    const { bloodType, location } = req.query;
+    let query = {};
+    
+    if (bloodType) {
+      query.bloodType = bloodType;
+    }
+    
+    if (location) {
+      query.location = { $regex: location, $options: 'i' };
+    }
+    
+    const data = await Blood.find(query).populate('donor', 'name');
     res.json(data);
   });
 

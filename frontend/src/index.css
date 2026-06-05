@@ -43,7 +43,7 @@ body {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+ padding: 20px;
 }
 
 .login-card {
@@ -586,7 +586,6 @@ body {
 .blood-type.anegative { background: #fce4ec; color: #ad1457; }
 .blood-type.bpositive { background: #e3f2fd; color: #1565c0; }
 .blood-type.bnegative { background: #e8eaf6; color: #283593; }
-.blood_TYPE.opositive { background: #fff3e0; color: #ef6c00; }
 .blood-type.onegative { background: #fbe9e7; color: #d84315; }
 .blood-type.abpositive { background: #f3e5f5; color: #6a1b9a; }
 .blood-type.abnegative { background: #f1f8e9; color: #33691e; }

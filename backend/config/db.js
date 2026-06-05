@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    const mongoURI = process.env.MONGO_URI || "mongodb://localhost:27017/smart-blood-bank";
+    await mongoose.connect(mongoURI);
     console.log("MongoDB Connected");
   } catch (error) {
     console.log(error);

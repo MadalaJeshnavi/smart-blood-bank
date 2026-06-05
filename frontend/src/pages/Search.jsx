@@ -19,7 +19,7 @@ function Search() {
   const handleSearch = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5001/api/blood", {
+const res = await axios.get("http://localhost:5002/api/blood", {
         params: { bloodType, location }
       });
       setResults(res.data);

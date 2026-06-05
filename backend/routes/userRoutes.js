@@ -2,8 +2,21 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
+const fs = require("fs");
+const path = require("path");
 
 const router = express.Router();
+
+// Get all donors from donors.json
+router.get("/donors", async (req, res) => {
+  try {
+    const donorsPath = path.join(__dirname, "..", "data", "donors.json");
+    const donorsData = JSON.parse(fs.readFileSync(donorsPath, "utf-8"));
+    res.json(donorsData);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching donors" });
+  }
+});
 
 router.post("/register", async (req, res) => {
   const hashed = await bcrypt.hash(req.body.password, 10);

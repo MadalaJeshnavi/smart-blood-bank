@@ -21,10 +21,9 @@ function Emergency() {
       navigate("/");
     }
 
-    // Fetch emergency requests
     const fetchRequests = async () => {
       try {
-        const res = await axios.get("http://localhost:5001/api/emergency");
+        const res = await axios.get("http://localhost:5002/api/emergency");
         setRequests(res.data);
       } catch (err) {
         console.error(err);
@@ -33,7 +32,6 @@ function Emergency() {
 
     fetchRequests();
 
-    // Socket listener for new emergency requests
     socket.on("emergency", (data) => {
       setRequests((prev) => [data, ...prev]);
     });
@@ -47,7 +45,7 @@ function Emergency() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      await axios.post("http://localhost:5001/api/emergency/create", formData, {
+      await axios.post("http://localhost:5002/api/emergency/create", formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert("Emergency request submitted successfully!");
@@ -71,7 +69,6 @@ function Emergency() {
 
   return (
     <div className="app-layout">
-      {/* Sidebar */}
       <div className="sidebar">
         <div className="sidebar-header">
           <div className="sidebar-logo">
@@ -115,14 +112,12 @@ function Emergency() {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="main-content">
         <div className="page-header">
           <h1 className="page-title">Emergency Requests</h1>
           <p className="page-subtitle">Request blood in emergency situations</p>
         </div>
 
-        {/* Emergency Alert */}
         <div className="emergency-alert">
           <div className="emergency-icon">
             <svg viewBox="0 0 24 24" fill="white" width="30" height="30">
@@ -135,7 +130,6 @@ function Emergency() {
           </div>
         </div>
 
-        {/* Request Form */}
         <div className="content-card">
           <h2 className="card-title">Submit Emergency Request</h2>
           <form onSubmit={handleSubmit}>
@@ -225,7 +219,6 @@ function Emergency() {
           </form>
         </div>
 
-        {/* Recent Requests */}
         <div className="content-card">
           <h2 className="card-title">Recent Emergency Requests</h2>
           {requests.length > 0 ? (
@@ -271,3 +264,4 @@ function Emergency() {
 }
 
 export default Emergency;
+

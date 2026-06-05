@@ -15,21 +15,9 @@ function Donors() {
 
     const fetchDonors = async () => {
       try {
-        // Fetch all blood records to get donor info
-        const res = await axios.get("http://localhost:5001/api/blood");
-        
-        // Extract unique donors
-        const uniqueDonors = [];
-        const seenIds = new Set();
-        
-        res.data.forEach(item => {
-          if (item.donor && !seenIds.has(item.donor._id)) {
-            seenIds.add(item.donor._id);
-            uniqueDonors.push(item.donor);
-          }
-        });
-        
-        setDonors(uniqueDonors);
+        // Fetch all donors from the new API endpoint
+        const res = await axios.get("http://localhost:5002/api/users/donors");
+        setDonors(res.data);
       } catch (err) {
         console.error(err);
       }

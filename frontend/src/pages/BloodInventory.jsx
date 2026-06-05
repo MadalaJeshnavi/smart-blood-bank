@@ -15,7 +15,7 @@ function BloodInventory() {
 
     const fetchInventory = async () => {
       try {
-        const res = await axios.get("http://localhost:5001/api/blood");
+const res = await axios.get("http://localhost:5002/api/blood");
         setInventory(res.data);
       } catch (err) {
         console.error(err);

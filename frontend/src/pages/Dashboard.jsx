@@ -21,16 +21,17 @@ function Dashboard() {
     // Fetch user data and stats
     const fetchData = async () => {
       try {
-        const userRes = await axios.get("http://localhost:5001/api/users/me", {
+const userRes = await axios.get("http://localhost:5002/api/users/me", {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUser(userRes.data);
 
-        const bloodRes = await axios.get("http://localhost:5001/api/blood");
-        const emergencyRes = await axios.get("http://localhost:5001/api/emergency");
+        const bloodRes = await axios.get("http://localhost:5002/api/blood");
+        const emergencyRes = await axios.get("http://localhost:5002/api/emergency");
+        const donorsRes = await axios.get("http://localhost:5002/api/users/donors");
 
         setStats({
-          totalDonors: bloodRes.data.length || 0,
+          totalDonors: donorsRes.data.length || 0,
           bloodAvailable: bloodRes.data.reduce((acc, b) => acc + b.quantity, 0) || 0,
           emergencyRequests: emergencyRes.data.length || 0
         });
