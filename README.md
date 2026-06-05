@@ -1,16 +1,18 @@
 # 🩸 Smart Blood Bank
 
-A MERN Stack based Blood Bank Management System developed to manage blood donors, track blood inventory, and handle emergency blood requests.
+A full-stack Blood Bank Management System built using the MERN Stack to manage donors, blood inventory, blood search, and emergency blood requests.
 
 ##  Features
 
-- Donor Registration
-- Blood Inventory Tracking
-- Blood Availability Search
-- Emergency Blood Requests
-- Real-Time Data Management
+- User Registration & Login
+- Blood Inventory Management
+- Donor Management
+- Blood Search Functionality
+- Emergency Blood Request Handling
+- Dashboard with Statistics
+- MongoDB Database Integration
 
-##  Tech Stack
+## 🛠 Tech Stack
 
 ### Frontend
 - React.js
@@ -26,26 +28,37 @@ A MERN Stack based Blood Bank Management System developed to manage blood donors
 ### Database
 - MongoDB
 
-##  Run Locally
+## 📸Screenshots
 
-```bash
-git clone https://github.com/MadalaJeshnavi/smart-blood-bank.git
+### Login Page
+![Login](screenshots/login.png)
 
-cd backend
-npm install
-npm start
+### Registration Page
+![Register](screenshots/register.png)
 
-cd ../frontend
-npm install
-npm run dev
-```
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
 
-##  Skills Demonstrated
+### Blood Inventory
+![Inventory](screenshots/blood%20inventory.png)
+
+### Donor Management
+![Donors](screenshots/donors.png)
+
+### Emergency Requests
+![Emergency](screenshots/emergency.png)
+
+### Blood Search
+![Search](screenshots/search.png)
+
+## Skills Demonstrated
 
 - MERN Stack Development
-- REST API Integration
-- MongoDB Database Operations
-- Frontend & Backend Development
+- REST API Development
+- MongoDB Integration
+- Authentication & Authorization
+- Frontend-Backend Integration
+- Dashboard Development
 - Git & GitHub Version Control
 
 ##  Author
