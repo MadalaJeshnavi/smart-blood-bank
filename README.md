@@ -68,3 +68,8 @@ Jeshnavi Madala
 GitHub: https://github.com/MadalaJeshnavi
 
 LinkedIn: https://www.linkedin.com/in/jeshnavi-madala
+
+## Live Demo
+
+Frontend: https://smart-blood-bank.vercel.app  
+Backend API: https://smart-blood-bank-1.onrender.com
